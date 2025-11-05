@@ -16,7 +16,7 @@ The architecture consists of:
 
 - Route 53 that automatically creates an alias record for filsanhdmohamed.co.uk pointing to the Application Load Balancer (ALB) and adds the DNS records needed for AWS Certificate Manager (ACM) to validate the SSL/TLS certificate, ensuring the WordPress site is served securely over HTTPS.
 
-Security groups enforcing least-privilege access, meaning that the Appplication Load Balancer (ALB) is open to the internet on port 80 and 443, WordPress instances are reachable only by the Application Load Balancer (ALB) and the Bastion Host, RDS is accessible only by WordPress, and the Bastion Host is restricted to a trusted IP.
+- Security groups enforcing least-privilege access, meaning that the Appplication Load Balancer (ALB) is open to the internet on port 80 and 443, WordPress instances are reachable only by the Application Load Balancer (ALB) and the Bastion Host, RDS is accessible only by WordPress, and the Bastion Host is restricted to a trusted IP.
 
 ---
 
