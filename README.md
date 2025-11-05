@@ -1,10 +1,6 @@
-# Terraform-Wordpress-AWS
-<br>
-<br>
+## Terraform-Wordpress-AWS
 
-## 📄 Project Description
-<br>
-<br>
+### 📄 Project Description
 
 This Terraform project automates the deployment of a highly available Wordpress website on AWS. It provisions a VPC with 2 public subnets and 4 private subnets across 2 Availability Zones, including NAT Gateways for private instance instance internet access. The architecture consists of:
 
@@ -19,23 +15,16 @@ This Terraform project automates the deployment of a highly available Wordpress 
 - Using Terraform, Route 53 automatically creates an alias record for filsanhdmohamed.co.uk pointing to the Application Load Balancer (ALB) and adds the DNS records needed for AWS Certificate Manager (ACM) to validate the SSL/TLS certificate, ensuring the WordPress site is served securely over HTTPS.
 
 - Security groups enforcing least-privilege access: Application Load Balancer (ALB) is open to the internet on port 80 and 443, WordPress instances are reachable only by the Application Load Balancer (ALB) and Bastion, RDS is accessible only by WordPress, and the Bastion-host is restricted to a trusted IP.
-<br>
-<br>
+
 ---
-<br>
-<br>
 
-## Architecture Diagram
 
-<br>
-
+### Architecture Diagram
 ![pic 1](images/1-architecture-diagram.gif)
 
-<br>
-
 ---
 
-## 📁 Terraform Wordpress Project Structure
+### 📁 Terraform Wordpress Project Structure
 
 ```
 
@@ -82,49 +71,39 @@ terraform-wordpress/
 
 ```
 ---
-<br>
 
 ### SSh'd into Wordpress App A (which Wordpress instance in the private subnet in Availability Zone A)through the Bastion Host instance in the public subnet.
-<br>
 
 Checked whether the wp-config.php file had been modified so that wordpress can connect to the RDS database. Also tested from the Wordpress private instance, whether it was possible to connect to the internet by running the ping command for a website (ietf.org) that has ICMP enabled. Used the command: `ping ietf.org` . As you can see in the pictures below, the wordpress app in the private subnet is able to establish a connection with the internet through the NAT Gateway. 
 
 Did all the above for Wordpress App B as well, which had the same results, as you can see below.
 
-<br>
-
 ![pic 2](images/2-ssh-into-ec2.png)
 
 <br>
-<br>
+
 
 ![pic 3](images/3-ssh-into-ec2.png)
 
 <br>
-<br>
 
 ![pic 4](images/4-ssh-into-ec2.png)
 
-<br>
-<br>
 ---
 
-<br>
 
 ### DEMO WORDPRESS WEBSITE
-<br>
-<br>
+
 
 ![pic 5](images/5-wordpress-website-terraform.gif)
 
-<br>
-<br>
+
 ---
-<br>
+
 
 ### Below you can see what the terraform code created in the AWS management console.
 <br>
-<br>
+
 
 #### VPC
  <br>
@@ -133,7 +112,7 @@ Did all the above for Wordpress App B as well, which had the same results, as yo
 
 <br>
 ---
-<br>
+
 
 ### Subnets
 <br>
