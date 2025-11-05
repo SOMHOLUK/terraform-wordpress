@@ -1,5 +1,5 @@
 ## Terraform-Wordpress-AWS
----
+
 
 ### 📄 Project Description
 
@@ -75,7 +75,7 @@ terraform-wordpress/
 
 ---
 
-### SSh'd into Wordpress App A (which Wordpress instance in the private subnet in Availability Zone A)through the Bastion Host instance in the public subnet.
+### SSh'd into Wordpress App A (which is the Wordpress instance in the private subnet in Availability Zone A) through the Bastion Host instance in the public subnet.
 
 Checked whether the wp-config.php file had been modified so that wordpress can connect to the RDS database. Also tested from the Wordpress private instance, whether it was possible to connect to the internet by running the ping command for a website (ietf.org) that has ICMP enabled. Used the command: `ping ietf.org` . As you can see in the pictures below, the wordpress app in the private subnet is able to establish a connection with the internet through the NAT Gateway.
 
