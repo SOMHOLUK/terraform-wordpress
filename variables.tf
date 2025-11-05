@@ -87,7 +87,7 @@ variable "target_group_protocol" {}
 variable "target_type" {}
 
 variable "internal" {
-  type        = bool
+  type = bool
 }
 
 variable "ssl_policy" { type = string }

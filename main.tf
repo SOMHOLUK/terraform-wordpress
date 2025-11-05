@@ -89,7 +89,7 @@ module "security" {
   source     = "./modules/security"
   env_prefix = var.env_prefix
   my_ip      = var.my_ip
-  vpc_id     = module.vpc.vpc_id 
+  vpc_id     = module.vpc.vpc_id
 }
 
 

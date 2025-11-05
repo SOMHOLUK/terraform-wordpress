@@ -1,4 +1,5 @@
 
+
 resource "aws_acm_certificate" "wordpress_cert" {
   domain_name       = var.domain_name 
   validation_method = "DNS"
@@ -48,3 +49,4 @@ resource "aws_route53_record" "acm_validation" {
 data "aws_route53_zone" "primary" {
   zone_id = var.route53_zone_id 
 }
+
