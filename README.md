@@ -1,9 +1,10 @@
 ## Terraform-Wordpress-AWS
 
-
 ### 📄 Project Description
 
-This Terraform project automates the deployment of a highly available Wordpress website on AWS. It provisions a VPC with 2 public subnets and 4 private subnets across 2 Availability Zones, including NAT Gateways for private instance instance internet access. The architecture consists of:
+This Terraform project automates the deployment of a highly available Wordpress website on AWS. It provisions a VPC with 2 public subnets and 4 private subnets across 2 Availability Zones, including NAT Gateways for private instance instance internet access. 
+
+The architecture consists of:
 
 - A Bastion host for secure SSH access
 
@@ -11,11 +12,11 @@ This Terraform project automates the deployment of a highly available Wordpress 
 
 - An RDS MySQL database in private subnets with multi-AZ support
 
-- The Application Load Balancer (ALB) redirects all HTTP traffic to HTTPS and uses an SSL/TLS certificate from AWS Certificate Manager (ACM) to encrypt traffic between users and the site.
+- An Application Load Balancer (ALB) that redirects all HTTP traffic to HTTPS and uses an SSL/TLS certificate from AWS Certificate Manager (ACM) to encrypt traffic between users and the site.
 
-- Using Terraform, Route 53 automatically creates an alias record for filsanhdmohamed.co.uk pointing to the Application Load Balancer (ALB) and adds the DNS records needed for AWS Certificate Manager (ACM) to validate the SSL/TLS certificate, ensuring the WordPress site is served securely over HTTPS.
+- Route 53 that automatically creates an alias record for filsanhdmohamed.co.uk pointing to the Application Load Balancer (ALB) and adds the DNS records needed for AWS Certificate Manager (ACM) to validate the SSL/TLS certificate, ensuring the WordPress site is served securely over HTTPS.
 
-- Security groups enforcing least-privilege access: Application Load Balancer (ALB) is open to the internet on port 80 and 443, WordPress instances are reachable only by the Application Load Balancer (ALB) and Bastion, RDS is accessible only by WordPress, and the Bastion-host is restricted to a trusted IP.
+Security groups enforcing least-privilege access, meaning that the Appplication Load Balancer (ALB) is open to the internet on port 80 and 443, WordPress instances are reachable only by the Application Load Balancer (ALB) and the Bastion Host, RDS is accessible only by WordPress, and the Bastion Host is restricted to a trusted IP.
 
 ---
 
