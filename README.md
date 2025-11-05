@@ -1,4 +1,5 @@
 ## Terraform-Wordpress-AWS
+---
 
 ### 📄 Project Description
 
@@ -18,8 +19,8 @@ This Terraform project automates the deployment of a highly available Wordpress 
 
 ---
 
-
 ### Architecture Diagram
+
 ![pic 1](images/1-architecture-diagram.gif)
 
 ---
@@ -64,24 +65,25 @@ terraform-wordpress/
 │
 ├── .gitignore
 ├── .terraform.lock.hcl
+├── README.md
 ├── main.tf
 ├── outputs.tf
 ├── provider.tf
 └── variables.tf
 
 ```
+
 ---
 
 ### SSh'd into Wordpress App A (which Wordpress instance in the private subnet in Availability Zone A)through the Bastion Host instance in the public subnet.
 
-Checked whether the wp-config.php file had been modified so that wordpress can connect to the RDS database. Also tested from the Wordpress private instance, whether it was possible to connect to the internet by running the ping command for a website (ietf.org) that has ICMP enabled. Used the command: `ping ietf.org` . As you can see in the pictures below, the wordpress app in the private subnet is able to establish a connection with the internet through the NAT Gateway. 
+Checked whether the wp-config.php file had been modified so that wordpress can connect to the RDS database. Also tested from the Wordpress private instance, whether it was possible to connect to the internet by running the ping command for a website (ietf.org) that has ICMP enabled. Used the command: `ping ietf.org` . As you can see in the pictures below, the wordpress app in the private subnet is able to establish a connection with the internet through the NAT Gateway.
 
 Did all the above for Wordpress App B as well, which had the same results, as you can see below.
 
 ![pic 2](images/2-ssh-into-ec2.png)
 
 <br>
-
 
 ![pic 3](images/3-ssh-into-ec2.png)
 
@@ -91,117 +93,63 @@ Did all the above for Wordpress App B as well, which had the same results, as yo
 
 ---
 
-
 ### DEMO WORDPRESS WEBSITE
-
 
 ![pic 5](images/5-wordpress-website-terraform.gif)
 
-
 ---
 
-
 ### Below you can see what the terraform code created in the AWS management console.
-<br>
-
 
 #### VPC
- <br>
 
 ![pic 6](images/6-vpc-terraform.png)
 
-<br>
 ---
 
-
 ### Subnets
-<br>
 
 ![pic 7](images/7-subnets-terraform.png)
 
-<br>
-
 ---
-
-<br>
 
 ### Internet Gateway
 
-<br>
-
 ![pic 8](images/8-igw-terraform.png)
 
-<br>
-
 ---
-<br>
 
 ### Route Tables
 
-<br>
-
 ![pic 9](images/9-routetables-terraform.png)
 
-<br>
-
 ---
-<br>
 
 ### Nat Gateways
 
-<br>
-
 ![pic 10](images/10-nat-gateways-terraform.png)
 
-<br>
-
 ---
-<br>
 
 ### EC2
 
-<br>
-
 ![pic 11](images/11-ec2-terraform.png)
 
-<br>
-
 ---
-
-<br>
 
 ### Target group
 
-<br>
-
 ![pic 12](images/12-targetgroup-terraform.png)
 
-<br>
-
 ---
-<br>
 
 ### Application Load Balancer
 
-<br>
-
 ![pic 13](images/13-alb-terraform.png)
 
-<br>
-
 ---
-<br>
-<br>
 
+### Documentation resources:
 
-### Documentation resources:  
 <a href="https://registry.terraform.io/" style="color: blue; text-decoration: underline;">Terraform Registry</a>  
 <a href="https://developer.hashicorp.com/terraform" style="color: blue; text-decoration: underline;">Hashicorp Terraform</a>
-
-
-
-
-
-
-
-
